@@ -16,7 +16,7 @@ function App() {
       <WelcomeMessage />
       <Header />
       <MainContent />
-      <UserProfile name="Pascal" age="21" bio="I am a software engineer with a track record"/>
+      <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <Footer />
       <div>
         <a href="https://vite.dev" target="_blank">
