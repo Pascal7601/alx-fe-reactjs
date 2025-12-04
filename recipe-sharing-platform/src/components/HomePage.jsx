@@ -4,7 +4,7 @@ function HomePage() {
   const [recipes, setRecipes] = useState("");
 
   return (
-    <div className="grid md:grid-cols-3 md:gap-8 md:w-50">
+    <div className="grid md:grid-cols-2 sm:grid-cols-1 md:gap-8 md:w-50">
       <h1 className="text-blue-500 text-center">RECIPES</h1>
       {data.map((recipe) => {
         return (
