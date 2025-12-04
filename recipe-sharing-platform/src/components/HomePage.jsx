@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import data from "../data.json";
 function HomePage() {
+  const [recipes, setRecipes] = useState("");
+
   return (
     <div className="grid md:grid-cols-3 md:gap-8 md:w-50">
       <h1 className="text-blue-500 text-center">RECIPES</h1>
