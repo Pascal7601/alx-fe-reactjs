@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import data from "../data.json";
 
 function RecipeDetail() {
   const { id } = useParams();
   const recipe = data.find((recipe) => recipe.id === parseInt(id));
+
+  useEffect(() => {
+    console.log("hello world");
+  }, []);
 
   return (
     <div className="bg-gray-100 rounded-lg my-10 p-4 shadow-lg hover:shadow-xl">
