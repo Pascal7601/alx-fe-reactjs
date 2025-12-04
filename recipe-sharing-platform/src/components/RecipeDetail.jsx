@@ -15,6 +15,8 @@ function RecipeDetail() {
       />
       <p className="font-semibold my-2">{recipe.title}</p>
       <p className="text-gray-600">{recipe.summary}</p>
+      <p className="text-gray-600">{recipe.ingredients}</p>
+      <p className="text-gray-600">{recipe.instructions}</p>
     </div>
   );
 }
