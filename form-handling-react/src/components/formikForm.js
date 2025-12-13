@@ -1,38 +1,46 @@
 import React from "react";
-import { useFormik } from "formik";
+import { Form, Formik, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
-function formikForm() {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      username: "",
-      password: "",
-    },
-  });
+const validationSchema = Yup.object({
+  username: Yup.string().required("Required"),
+  email: Yup.string().email("invalid email address").required("required"),
+  password: Yup.string().required("Required"),
+});
+
+const initialValues = {
+  email: "",
+  username: "",
+  password: "",
+};
+const onSubmit = (values) => {
+  alert(JSON.stringify(values));
+};
+
+function FormikForm() {
   return (
-    <div>
-      <form onSubmit={formik.handleSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}
+    >
+      <Form>
         <label htmlFor="">Email</label>
-        <input
-          name="email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-        />
+        <Field name="email" />
+        <ErrorMessage name="email" />
+
         <label htmlFor="">Username</label>
-        <input
-          name="username"
-          value={formik.values.username}
-          onChange={formik.handleChange}
-        />
+        <Field name="username" />
+        <ErrorMessage name="username" />
+
         <label htmlFor="">Password</label>
-        <input
-          name="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-        />
-      </form>
-    </div>
+        <Field name="password" />
+        <ErrorMessage name="password" />
+
+        <button type="submit">Submit</button>
+      </Form>
+    </Formik>
   );
 }
 
-export default formikForm;
+export default FormikForm;
