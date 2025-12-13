@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import { Formik } from "formik";
 
 function RegistrationForm() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [erros, setErros] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault;
-    if (!username || !email || !password) {
+    if (!username) {
+      alert("cannot be empty");
+    }
+    if (!email) {
+      alert("cannot be empty");
+    }
+    if (!password) {
       alert("cannot be empty");
     }
     console.log(username);
