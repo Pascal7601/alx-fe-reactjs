@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./components/ProfileSettings";
 
 function Profile() {
   return (
