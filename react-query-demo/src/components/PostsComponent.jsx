@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 
-const url = "https://jsonplaceholder.typicode.com/pos";
+const url = "https://jsonplaceholder.typicode.com/posts";
 
 function PostsComponent() {
   const { isLoading, data, isError, error } = useQuery({
